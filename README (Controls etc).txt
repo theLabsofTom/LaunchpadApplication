@@ -1,6 +1,6 @@
 Thank you for considering me for the Launchpad program.
 
-This is my attempt at the third challenge, the game.
+This is my attempt at the third challenge: the game.
 
 This project actually contains two attempts at the challenge. The first attempt controlled the bird through physics forces and required the player to tap 'Space' to flap their wings. The second attempt sees the bird constantly moving through simple lerps. The physics driven bird was unfortunately too complex to control in high stress situations, such as being chased by a dragon, hence the development of the second, simpler control scheme which is what I present now.
 
@@ -13,7 +13,18 @@ A/D --- Yaw (tap to rotate 90 degrees)*
 Q/E --- Roll (hold to rotate up to 100 degrees)
 Left Shift --- Slow down**
 
+
+::CONTROLLER CONTROLS::
+D-PAD Y Axis --- Pitch (hold)
+D-PAD X Axis --- Yaw (tap to rotate 90 degrees*)
+Right Stick X Axis --- Roll
+LB --- Slow Down***
+
+
 You constantly move forwards, making Pitch and Elevation interchangable. You change your elevation by changing your pitch.
+
+The dragon chases you, always coming towards you in a straight line. If a building gets in the way, the dragon destroys it. The dragon flies significantly faster than you in a straight line and will catch up easily if you allow it to. It will slow down if it has to turn to face you so fly in an eratic pattern to win.
+
 
 
 *the rotation is snapped to 90 degrees to match the grid layout of the city.
