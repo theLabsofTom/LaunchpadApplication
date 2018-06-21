@@ -9,31 +9,56 @@ public class TargetSwapper : MonoBehaviour
     [Tooltip("The index of the target to start on")]
     public int StartTargetIndex;
     private int index;
+    private bool ignoreAxis;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
         index = StartTargetIndex;
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    }
+
+    // Update is called once per frame
+    void Update()
     {
-		if (Input.GetButtonDown("TurnLeft"))
+        if (Input.GetAxis("ControllerTurn") < 0 && !ignoreAxis)
         {
-            if (++index >= Targets.Length)
-            {
-                index = 0;
-            }
-            flyScript.Target = Targets[index];
+            ignoreAxis = true;
+            NextIndex();
+        }
+        if (Input.GetAxis("ControllerTurn") > 0 && !ignoreAxis)
+        {
+            ignoreAxis = true;
+            PreviousIndex();
+        }
+        if (Input.GetAxis("ControllerTurn") == 0)
+        {
+            ignoreAxis = false;
+        }
+        if (Input.GetButtonDown("TurnLeft"))
+        {
+            NextIndex();
         }
         if (Input.GetButtonDown("TurnRight"))
         {
-            if (--index < 0)
-            {
-                index = Targets.Length - 1;
-            }
-            flyScript.Target = Targets[index];
+            PreviousIndex();
         }
+    }
+
+    private void PreviousIndex()
+    {
+        if (--index < 0)
+        {
+            index = Targets.Length - 1;
+        }
+        flyScript.Target = Targets[index];
+    }
+
+    private void NextIndex()
+    {
+        if (++index >= Targets.Length)
+        {
+            index = 0;
+        }
+        flyScript.Target = Targets[index];
     }
 }

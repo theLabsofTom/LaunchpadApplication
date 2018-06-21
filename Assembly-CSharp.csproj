@@ -126,6 +126,7 @@
     <Compile Include="Assets\Scripts\Roller.cs" />
     <Compile Include="Assets\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\Score.cs" />
+    <Compile Include="Assets\Scripts\SlowDown.cs" />
     <Compile Include="Assets\Scripts\SpawnCity.cs" />
     <Compile Include="Assets\Scripts\TargetSwapper.cs" />
     <Compile Include="Assets\Scripts\Translater.cs" />
